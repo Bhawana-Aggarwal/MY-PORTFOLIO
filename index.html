@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- style.css -->
+    <link href="style.css" rel="stylesheet">
+
+    <title>Portfolio-Bhawana</title>
+
+    <!-- jquery source -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!--  -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+
+    <!-- font awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+<!-- Scroll Up Button -->
+<div class="scroll-up-btn">
+  <i class="fas fa-angle-up"></i>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container-fluid max-width">
+      <a class="navbar-brand fs-2" href="#" >BhawanaAggarwal</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleMenu()">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto fs-2">
+              <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="#services">Certificates</a></li>
+              <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact" style="margin-right: 20px;">Contact</a></li>
+          </ul>
+      </div>
+  </div>
+
+  <!-- Sliding Menu -->
+  <div id="slidingMenu" class="sliding-menu">
+      <div class="close-btn" onclick="closeMenu()">X</div>
+      <ul class="sliding-menu-list">
+          <li><a href="#home" class="menu-link" onclick="closeMenu()">Home</a></li>
+          <li><a href="#about" class="menu-link" onclick="closeMenu()">About</a></li>
+          <li><a href="#services" class="menu-link" onclick="closeMenu()">Certificates</a></li>
+          <li><a href="#skills" class="menu-link" onclick="closeMenu()">Skills</a></li>
+          <li><a href="#contact" class="menu-link" onclick="closeMenu()">Contact</a></li>
+      </ul>
+  </div>
+</nav>
+
+
+<!-- HOME SECTION -->
+<section class="home" id="home">
+  <div class="container d-flex flex-column justify-content-center align-items-start min-vh-100 text-light">
+      <div class="home-content">
+          <div class="text-1 fs-4">Hello, my name is</div>
+          <div class="fw-bold responsive-text">
+              <span style="color: #dc143c;">B</span>hawana<span style="color: #dc143c;">A</span>ggarwal
+          </div>
+          <div class="text-3 fs-2">
+              And I'm a <span class="text-danger fw-semibold">Front-End Web Developer</span>
+          </div>
+          <!-- <a href="https://github.com/Bhawana-Aggarwal" target="_blank" class="btn btn-outline-danger mt-3">
+              <i class="fab fa-github git_btn"></i> Github
+          </a> -->
+          <a href="https://github.com/Bhawana-Aggarwal" target="_blank" class="btn btn-danger mt-3 dow_res">
+            <i class="fab fa-github git_btn " style="margin-right: 0.5rem;"></i>GitHub
+        </a>
+      </div>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about py-5" id="about">
+  <div class="container">
+      <h2 class="title text-center mb-4">About me </h2>
+      <div class="row align-items-center">
+          <!-- Left Column: Image -->
+          <div class="col-lg-6 mb-4 mb-lg-0 text-center">
+              <img src="asserts/images/My_Picture.jpg" alt="Bhawana Aggarwal"
+                  class="img-fluid rounded shadow-lg" style="max-height: 400px; object-fit: cover;">
+          </div>
+          <!-- Right Column: Text -->
+          <div class="col-lg-6">
+              <div class="text fs-3 fw-semibold mb-3">
+                  I'm BHAWANA, a Front-End Web Developer!
+              </div>
+              <p style="text-align: justify;">
+                  I am Bhawana Aggarwal. Currently working at <a href="https://phenomit.com/" target="_blank"
+                      class="text-danger text-decoration-none">"PHENOM IT"</a> as a frontend web developer, I am also pursuing a Bachelor's in Computer Applications (BCA) from <a href="https://www.dnc.ac.in/" target="_blank"
+                      class="text-danger text-decoration-none">DAYANAND COLLEGE</a>, under <a href="https://gjust.ac.in" target="_blank"
+                      class="text-danger text-decoration-none">"Guru Jambheshwar University of Science And Technology"</a> Hisar Haryana.
+              </p>
+              <ul class="mt-3" style="text-align: justify;">
+                  <li>Completed my DCA (Diploma in Computer's Application) course by the <a href="https://www.hartron.org.in/" target="_blank"
+                          class="text-danger text-decoration-none">HARTRON</a> institute of technology with grading 'A'.</li>
+                  <li>I completed my ALPHA Course (DSA in Java) under the expert guidance of "SHRADHA KHAPRA."
+                      from APNA COLLEGE.</li>
+                  <li>I have knowledge of the following technologies:
+                      <ul class="">
+                          <li>Frontend web development technologies: HTML, CSS, JS, Bootstrap</li>
+                          <li>Backend web development technologies: Node.js, Express.js</li>
+                          <li>Database: MongoDB</li>
+                          <li>Programming Languages: C, C++, Java, Python</li>
+                      </ul>
+                  </li>
+              </ul>
+              <a href="asserts/Bhawana-Resume.pdf" target="_blank" class="btn btn-danger mt-3 dow_res">
+                Download Resume
+            </a>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section class="services py-5" id="services">
+  <div class="container">
+    <h2 class="title text-center mb-4">My Certificates </h2>
+          <div class="row">
+          <!-- Card 1: DCA -->
+          <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
+              <div class="card text-center p-4 border-0 rounded shadow-sm">
+                  <div class="box">
+                      <div class="text fs-4 fw-bold">DCA</div>
+                      <p class="text-muted ">(Diploma in Computer Application's)</p>
+                      <img src="asserts/images/DCA_Certificate.jpg" class="img-fluid mb-3" style="max-width: 100%; height: auto; object-fit: contain;">
+                      <p>
+                          Successfully completed <b>DCA (Diploma in Computer Applications)</b> with an 'A' grade,
+                          acquiring comprehensive knowledge of MS Office, CPF basics, and essential computer
+                          applications for professional and practical use.
+                      </p>
+                  </div>
+              </div>
+          </div>
+          <!-- Card 2: DSA -->
+          <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
+              <div class="card text-center p-4 border-0 rounded shadow-sm">
+                  <div class="box">
+                      <div class="text fs-4 fw-bold">DSA</div>
+                      <p class="text-muted">(Data Structures & Algorithms)</p>
+                      <img src="asserts/images/DSA CERTIFICATE.jpg" class="img-fluid mb-3" style="max-width: 100%; height: auto; object-fit: contain;">
+                      <p>
+                          Successfully completed <b>Alpha with DSA</b>, mastering logic building, algorithm design,
+                          and problem-solving using data structure techniques to develop optimized and efficient
+                          solutions for complex challenges.
+                      </p>
+                  </div>
+              </div>
+          </div>
+          <!-- Card 3: HTML | CSS Certified -->
+          <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
+              <div class="card text-center p-4 border-0 rounded shadow-sm">
+                  <div class="box">
+                      <div class="text fs-4 fw-bold">HTML | CSS Certified</div>
+                      <p class="text-muted ">(HTML | CSS Certified)</p>
+                      <img src="asserts/images/HTMLCSS certificate.jpg" class="img-fluid mb-3" style="max-width: 100%; height: auto; object-fit: contain;">
+                      <p>
+                          Successfully completed <b>"Building Responsive Landing Page Using HTML & CSS"</b>, gaining
+                          hands-on experience in creating responsive, user-friendly designs. HTML and CSS for
+                          real-world applications and adaptive web layouts.
+                      </p>
+                  </div>
+              </div>
+          </div>
+          <!-- Card 4: JS Fundamentals -->
+          <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
+              <div class="card text-center p-4 border-0 rounded shadow-sm">
+                  <div class="box">
+                      <div class="text fs-4 fw-bold">JS Fundamentals</div>
+                      <img src="asserts/images/JS_certificate.jpg" class="img-fluid mb-3" style="max-width: 100%; height: auto; object-fit: contain;">
+                      <p>
+                          Completed the course <b>"Mastering JS Fundamentals"</b> and gained in-depth knowledge of
+                          JavaScript functions, enabling me to enhance website interactivity and deliver engaging user
+                          experiences through dynamic and responsive designs.
+                      </p>
+                  </div>
+              </div>
+          </div>
+          <!-- Card 5: Git | Github Certified -->
+          <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
+              <div class="card text-center p-4 border-0 rounded shadow-sm">
+                  <div class="box">
+                      <div class="text fs-4 fw-bold">Git | Github Certified</div>
+                      <img src="asserts/images/GitHub_Certificate.jpg" class="img-fluid mb-3" style="max-width: 100%; height: auto; object-fit: contain;">
+                      <p>
+                          Completed <b>"Git and GitHub Course"</b>, gaining expertise in remote collaboration, version
+                          control, and managing code efficiently across teams.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- my skills section -->
+
+<section class="skills mb-3 pb-0 " id="skills">
+  <div class="container">
+    <div class="max-width">
+      <!-- Title -->
+      <h2 class="title text-center mb-5" style="font-size: 40px; font-weight: 500;">My Skills</h2>
+      
+      <!-- Skills Content -->
+      <div class="skills-content d-flex justify-content-center">
+        <div class="row w-100">
+          <!-- Left Column: Text and Resume Download -->
+          <div class="col-md-6">
+            <div class="column left">
+              <div class="text" style="color: #dc143c; font-size: 1.2rem; line-height: 1.5;">
+                My skills & experiences.
+              </div>
+              <ul style="font-size: 1rem; margin-top: 1rem;">
+                <li>I am currently diving into 'React + Vite' through tutorials on YouTube.</li>
+                <li>While actively enhancing my skills by exploring and building exciting new projects.</li>
+              </ul>
+              <a href="asserts/Bhawana-Resume.pdf" target="_blank" class="btn btn-danger mt-3 mb-3">
+                Download Resume
+            </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Skill Progress Bars -->
+          <div class="col-md-6">
+            <div class="skill">
+              <div class="d-flex justify-content-between">
+                <span>HTML</span>
+                <span>80%</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 80%; background-color: crimson;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="d-flex justify-content-between">
+                <span>CSS & Bootstrap</span>
+                <span>60%</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 60%; background-color: crimson;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="d-flex justify-content-between">
+                <span>JavaScript</span>
+                <span>70%</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 70%; background-color: crimson;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="d-flex justify-content-between">
+                <span>Node.js & Express.js</span>
+                <span>50%</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 50%; background-color: crimson;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="d-flex justify-content-between">
+                <span>MongoDB</span>
+                <span>80%</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 80%; background-color: crimson;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr style=" height: 5px; width: 100%; background-color: #dc143c; position: relative; z-index: 10;">
+
+<!-- CONTACT SECTION -->
+
+<section class="contact" id="contact">
+  <div class="container-fluid">
+    <h2 class="title text-center mb-4 mt-0 pt-0">Contact Me</h2>
+
+    <!-- Top Text Section -->
+    <div class="text-center mb-4">
+      <div class="text" style="color: #dc143c; font-size: 1.5rem; font-weight: 600; white-space: nowrap;">
+        Don't be shy
+      </div>
+      <p class="full-width-text p-2" style="font-size: 1.2rem; color: #555;">
+        Feel free to get in touch with me. I am always open to discussing new projects, creative ideas,
+        or opportunities to be part of your visions.
+      </p>
+    </div>
+
+    <!-- Contact Info and Social Links in a Flex Row -->
+    <div class="row d-flex justify-content-center">
+      <!-- Left Column: Contact Info -->
+      <div class="col-md-6 mb-4">
+        <div class="icons">
+          <div class="row mb-3 ps-3">
+            <div class="contact-info d-flex align-items-center">
+              <i class="fas fa-user"></i>
+              <div class="info ms-3">
+                <div class="head">Name</div>
+                <div class="sub-title">Bhawana Aggarwal</div>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3 ps-3">
+            <div class="contact-info d-flex align-items-center">
+              <i class="fas fa-map-marker-alt"></i>
+              <div class="info ms-3">
+                <div class="head">Address</div>
+                <div class="sub-title">Hisar, Haryana, India</div>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3 ps-3">
+            <div class="contact-info d-flex align-items-center">
+              <i class="fas fa-envelope"></i>
+              <div class="info ms-3">
+                <div class="head">Email</div>
+                <div class="sub-title">
+                  <a href="mailto:bhawanaagarwal7988@gmail.com" style="color: #dc143c;" target="_blank">
+                    bhawanaagarwal7988@gmail.com
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Social Links -->
+      <div class="col-md-6 mb-4" >
+        <div class="icons">
+          <div class="row mb-3 ps-3">
+            <div class="contact-info d-flex align-items-center">
+              <i class="fab fa-linkedin"></i>
+              <div class="info ms-3">
+                <div class="head">LinkedIn</div>
+                <div>
+                  <a href="https://www.linkedin.com/in/bhawana-aggarwal101022/" target="_blank" style="color: #dc143c;">
+                    /in/bhawana-aggarwal101022/
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3 ps-3">
+            <div class="contact-info d-flex align-items-center">
+              <i class="fab fa-twitter"></i>
+              <div class="info ms-3">
+                <div class="head">Twitter</div>
+                <div>
+                  <a href="https://x.com/home" target="_blank" style="color: #dc143c;">
+                    //x.com/bhawana-aggarwal
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3 ps-3">
+            <div class="contact-info d-flex align-items-center">
+              <i class="fab fa-github"></i>
+              <div class="info ms-3">
+                <div class="head">GitHub</div>
+                <div>
+                  <a href="https://github.com/Bhawana-Aggarwal" target="_blank" style="color: #dc143c;">
+                    //github.com/Bhawana-Aggarwal
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FOOTER SECTION -->
+<footer class="bg-dark text-white py-3 mt-3">
+  <div class="container text-center">
+      <span>Created By
+          <a href="https://www.linkedin.com/in/bhawana-aggarwal101022/" target="_blank" class="text-danger text-decoration-none">Bhawana-Aggarwal</a>
+      </span>
+  </div>
+</footer>
+
+<script>
+  // Sticky navbar with background color change on scroll
+  window.addEventListener('scroll', function () {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 10) {
+      navbar.classList.add('sticky');
+    } else {
+      navbar.classList.remove('sticky');
+    }
+  });
+
+  // Show/Hide Scroll-Up Button
+  const scrollUpBtn = document.getElementById('scrollUpBtn');
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 300) {
+      scrollUpBtn.classList.add('show');
+    } else {
+      scrollUpBtn.classList.remove('show');
+    }
+  });
+
+  // Scroll to top functionality
+  scrollUpBtn.addEventListener('click', function () {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+
+  });
+// Toggle Menu Functionality (Open/Close the sliding menu)
+function toggleMenu() {
+    const slidingMenu = document.getElementById("slidingMenu");
+    slidingMenu.classList.toggle("show");
+}
+
+// Close Menu when an option is selected
+function closeMenu() {
+    const slidingMenu = document.getElementById("slidingMenu");
+    slidingMenu.classList.remove("show");
+}
+
+</script>
+
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+      </html>

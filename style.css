@@ -1,0 +1,1427 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
+
+/* Global Styles - Ensure box-sizing and prevent overflow */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll globally */
+  width: 100%;
+}
+
+.max-width {
+  max-width: 1300px;
+  padding: 0 50px;
+  margin: auto;
+}
+
+.about,
+.services,
+.skills,
+.teams,
+.contact,
+footer {
+  font-family: "Poppins", sans-serif;
+}
+
+.about .about-content,
+.services .serv-content,
+.skills .skills-content,
+.contact .contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+section .title {
+  position: relative;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+section .title::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 180px;
+  height: 3px;
+  background: #111;
+  transform: translateX(-50%);
+}
+
+section .title::after {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  font-size: 20px;
+  color: crimson;
+  padding: 0 5px;
+  background: #fff;
+  transform: translateX(-50%);
+}
+
+/* Ensure content is not hidden behind navbar on scroll */
+section {
+  scroll-margin-top: 60px; /* Adjust based on the height of your navbar */
+}
+
+
+/* Navbar Styling */
+.navbar {
+  padding: 30px 0;
+  font-family: "Ubuntu", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.navbar .max-width {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  color: #f1f1f1;
+  font-weight: bold;
+}
+
+
+/* Navbar Links */
+.navbar .navbar-nav .nav-item {
+  margin-left: 25px;
+}
+
+.navbar .navbar-nav .nav-link {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: crimson;
+}
+
+.navbar.sticky .navbar-nav .nav-link:hover {
+  color: #fff;
+}
+
+/* Sticky Navbar */
+.navbar.sticky {
+  padding: 15px 0;
+  background: crimson;
+}
+
+.navbar.sticky .navbar-brand {
+  color: #fff;
+}
+
+/* Scroll Up Button */
+.scroll-up-btn {
+  position: fixed;
+  height: 45px;
+  width: 42px;
+  background: crimson;
+  right: 30px;
+  bottom: 10px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  z-index: 9999;
+  font-size: 30px;
+  border-radius: 6px;
+  border-bottom-width: 2px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.scroll-up-btn.show {
+  bottom: 30px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scroll-up-btn:hover {
+  filter: brightness(90%);
+}
+
+/* Sliding Menu Styling */
+.sliding-menu {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Initially hidden off-screen */
+  width: 100%; /* Take full width */
+  height: 100%;
+  background: black; /* Black background for the sliding menu */
+  transition: left 0.3s ease-in-out;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 10px;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5); /* Add shadow for better depth effect */
+}
+
+.sliding-menu.show {
+  left: 0; /* Slide in to full width */
+}
+
+/* Close Button Styling */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: crimson;
+}
+
+/* Menu List Styling */
+.sliding-menu-list {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.sliding-menu-list li {
+  margin: 20px 0;
+}
+
+.sliding-menu-list li a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.sliding-menu-list li a:hover {
+  color: crimson;
+}
+
+
+/* Close Button Styling */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: crimson;
+}
+
+/* Hide the Bootstrap menu when the sliding menu is active */
+.navbar-collapse {
+  display: none !important;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 991px) {
+  .navbar-nav {
+      display: none; /* Hide default navbar items on small screens */
+  }
+
+  .scroll-up-btn {
+      right: 10px;
+      bottom: 10px;
+  }
+}
+
+
+/* Home Section Background Styling */
+.home {
+  background: url("https://i.ibb.co/SPZD6fx/banner.jpg") no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  padding: 0; /* Ensure no padding causes overflow */
+}
+
+.home .home-content .text-1 {
+  font-size: 27px;
+}
+
+.home .home-content .text-2 {
+  font-size: 75px;
+  font-weight: 600;
+  margin-left: -3px;
+}
+
+.responsive-text {
+  font-size: 5rem; /* Default font size */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .responsive-text {
+    font-size: 3.5em; /* Medium screens */
+  }
+}
+@media (max-width: 576px) {
+  .responsive-text {
+    font-size: 3em; /* Medium screens */
+  }
+}
+.home .home-content .text-2 span {
+  color: crimson;
+  transition: all 0.3s ease;
+}
+
+.home .home-content .text-3 {
+  font-size: 40px;
+  margin: 5px 0;
+}
+
+.home .home-content .text-3 span {
+  color: crimson;
+  font-weight: 500;
+}
+
+.home .home-content a {
+  font-size: 25px;
+  padding: 12px 36px;
+  font-weight: 400;
+  border-radius: 6px;
+  border: 2px solid crimson;
+  transition: all 0.3s ease;
+}
+
+.home .home-content a:hover {
+  color: crimson;
+  background: none;
+}
+
+/* About Section Styling */
+.about .title {
+  position: relative; /* Necessary for the pseudo-element to work */
+}
+
+.about .title::after {
+  content: "who I am"; /* Removed the "who I am" text to avoid duplication */
+}
+
+/* Image Styling */
+.about .about-content .left img {
+  border-radius: 20px;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.5);
+  max-width: 100%; /* Ensure image does not overflow */
+  height: auto;
+}
+
+/* Ensure the image is centered in small screens (less than 992px) */
+@media (max-width: 992px) {
+  .about .row {
+    text-align: center; /* Align text and image to the center */
+  }
+
+  .about .about-content .left img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block; /* Center the image in the row */
+  }
+}
+
+/* Link Styling */
+.about .about-content .right a {
+  display: inline-block;
+  background: crimson;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px 30px;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 2px solid crimson;
+  transition: all 0.3s ease;
+}
+
+.about .about-content .right a:hover {
+  color: crimson;
+  background: none;
+}
+
+/* Services Section Styling */
+.services {
+  background: #111;
+  color: #fff;
+  padding: 0 15px; /* Prevents horizontal overflow */
+}
+
+
+
+.services .title::after {
+  background-color: #111;
+  content: "What I Achieved"; /* Added the "What I Achieved" content */
+  display: block;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #dc143c; /* Customize the color if needed */
+  margin-top: 10px;
+}
+
+@media (max-width: 433px) {
+  .services .title::after {
+    width: 80%;
+  }
+}
+
+@media (max-width: 376px) {
+  .services .title {
+    
+    margin: 0 auto; /* Center the title */
+    font-size: 28px;
+  }
+
+  /* Adjust the position of the pseudo-element to align well */
+  .services .title::after {
+    font-size: 18px; /* Smaller text size for very small screens */
+    bottom: -15px; /* Ensure proper spacing */
+    width: 100%;
+  }
+}
+
+@media (max-width: 307px) {
+  .services .title {
+    font-size: 20px;
+  }
+
+  .services .title::after {
+    font-size: 15px;
+  }
+}
+
+
+
+/* Card Styling */
+.services .card {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden; /* Prevents overflow of image */
+}
+
+.services .card:hover {
+  background: crimson;
+}
+
+.services .card .box {
+  transition: all 0.3s ease;
+  
+}
+
+.services .text-muted {
+  color: #fff !important;  /* White color */
+}
+.services .card:hover .box {
+  transform: scale(1.05);
+}
+
+.services .card .text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px;
+}
+
+.services .card p {
+  color: #fff; /* Ensures that regular paragraphs are white */
+}
+
+.services .card .text-muted {
+  color: #fff; /* Ensures .text-muted is white */
+}
+
+.services .card img {
+  margin: 10px 0;
+  max-width: 100%; /* Ensure image is responsive */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensures the image fits without distortion */
+  display: block; /* Remove any inline space that could push the image */
+  width: 100%; /* Ensure image takes up the full width of its container */
+}
+
+/* Ensure responsive behavior for small screens */
+@media (max-width: 768px) {
+  .services .card {
+    padding: 15px; /* Reduce padding on smaller screens */
+  }
+
+  .services .card .text {
+    font-size: 22px; /* Slightly smaller text for small screens */
+  }
+
+  .services .card img {
+    max-width: 80%; /* Reduce the max-width of the image to fit better */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Prevent distortion */
+  }
+}
+
+@media (max-width: 576px) {
+  .services .card img {
+    max-width: 70%; /* Further reduce image size on very small screens */
+  }
+}
+
+/* Extremely small screens (less than 330px) */
+@media (max-width: 330px) {
+  .services .card img {
+    max-width: 60%; /* Reduce image size even further */
+  }
+
+  .services .card .text {
+    font-size: 18px; /* Reduce text size for readability */
+  }
+}
+
+/* General styling for the skills section */
+.skills .title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* After content for skills */
+.skills .title::after {
+  content: "what I know";
+  display: block;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 100;
+  color: #dc143c;
+  margin-top: 10px;
+}
+
+/* Skills Content */
+.skills .skills-content .left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.skills .skills-content .left a {
+  display: inline-block;
+  background: crimson;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 16px;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 2px solid crimson;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.skills .skills-content .left a:hover {
+  color: crimson;
+  background: none;
+}
+
+/* Skills bar styling */
+.skills .skills-content .right .bars {
+  margin-bottom: 15px;
+}
+
+.skills .skills-content .right .info {
+  display: flex;
+  margin-bottom: 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.skills .skills-content .right span {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.skills .skills-content .right .line {
+  height: 5px;
+  width: 100%;
+  background: lightgrey;
+  position: relative;
+}
+
+.skills .skills-content .right .line::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: crimson;
+}
+
+.skills .skills-content .right .html::before {
+  width: 80%;
+}
+
+.skills .skills-content .right .css::before {
+  width: 60%;
+}
+
+.skills .skills-content .right .js::before {
+  width: 70%;
+}
+
+.skills .skills-content .right .php::before {
+  width: 50%;
+}
+
+.skills .skills-content .right .mysql::before {
+  width: 80%;
+}
+
+/* Maximizing width */
+.skills .max-width {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Padding adjustment for the skills section */
+#skills {
+  padding-top: 60px; /* Adjusted top padding for better spacing */
+}
+
+/* Add some padding to the section for larger screens */
+.skills {
+  padding: 3rem 0;
+}
+
+/* Adjust the progress bars to be thinner */
+.progress {
+  height: 6px !important; /* Thinner height */
+  border-radius: 10px;
+  background-color: #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+.progress-bar {
+  height: 100% !important; /* Ensures the bar fills the container */
+  border-radius: 10px;
+}
+
+/* For larger screens, reduce the padding/margin for a cleaner look */
+@media (min-width: 992px) {
+  .col-md-6 {
+    padding: 0 30px;
+  }
+
+  .skills-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .left {
+    padding-right: 30px;
+  }
+
+  .column.left .text {
+    font-size: 1.25rem;
+  }
+
+  .skill {
+    margin-bottom: 1.5rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  /* Optional: Adjust the skill bars width in large screens */
+  .progress-bar {
+    transition: width 0.5s ease;
+  }
+}
+
+/* Media Queries for responsiveness */
+
+/* For screens smaller than 495px */
+@media (max-width: 495px) {
+  .skills .title {
+    font-size: 1.5rem;
+  }
+
+  .skills .title::after {
+    font-size: 1.2rem;
+    margin-top: 8px;
+  }
+
+  #skills {
+    padding-top: 50px; /* Adjust top padding for smaller screens */
+  }
+
+  .skills .skills-content .left a {
+    font-size: 16px;
+    padding: 6px 14px;
+  }
+}
+
+/* For screens smaller than 434px */
+@media (max-width: 434px) {
+  .skills .title {
+    font-size: 1.4rem;
+  }
+
+  .skills .title::after {
+    font-size: 1.1rem;
+  }
+
+  .skills .skills-content .left a {
+    font-size: 15px;
+    padding: 5px 12px;
+  }
+
+  #skills {
+    padding-top: 40px; /* Reduce padding-top further for smaller screens */
+  }
+}
+
+/* For screens smaller than 398px */
+@media (max-width: 398px) {
+  .skills .title {
+    font-size: 1.3rem;
+  }
+
+  .skills .title::after {
+    font-size: 1rem;
+    margin-top: 6px;
+  }
+
+  .skills .skills-content .left a {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+
+  #skills {
+    padding-top: 30px; /* Further reduce top padding for even smaller screens */
+  }
+}
+
+/* For screens smaller than 381px */
+@media (max-width: 381px) {
+  .skills .title {
+    font-size: 1.2rem;
+  }
+
+  .skills .title::after {
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+
+  .skills .skills-content .left a {
+    font-size: 13px;
+    padding: 4px 8px;
+  }
+
+  #skills {
+    padding-top: 20px; /* Minimal padding for very small screens */
+  }
+}
+
+/* For screens smaller than 362px */
+@media (max-width: 362px) {
+  .skills .title {
+    font-size: 1.1rem;
+  }
+
+  .skills .title::after {
+    font-size: 0.8rem;
+    margin-top: 4px;
+  }
+
+  .skills .skills-content .left a {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  
+}
+
+/* For screens smaller than 334px */
+@media (max-width: 334px) {
+  .skills .title {
+    font-size: 1rem;
+  }
+
+  .skills .title::after {
+    font-size: 0.8rem;
+    margin-top: 3px;
+  }
+
+  .skills .skills-content .left a {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+
+ 
+}
+
+/* For screens smaller than 232px */
+@media (max-width: 232px) {
+  .skills .title {
+    font-size: 0.9rem;
+  }
+
+  .skills .title::after {
+    font-size: 0.7rem;
+    margin-top: 3px;
+  }
+
+  .skills .skills-content .left a {
+    font-size: 10px;
+    padding: 2px 4px;
+  }
+
+  #skills {
+    padding-top: 5px; /* Maintain minimal padding for extremely small screens */
+  }
+}
+
+/* For very small screens (less than 318px) */
+@media (max-width: 318px) {
+  .skills .title {
+    font-size: 1rem;
+  }
+
+  .skills .title::after {
+    font-size: 0.8rem;
+  }
+
+  .skills .skills-content .left a {
+    font-size: 9px;
+    padding: 2px 4px;
+  }
+
+  #skills {
+    padding-top: 5px; /* Minimal padding for ultra small screens */
+  }
+}
+
+/* For even smaller screens (less than 232px) */
+@media (max-width: 232px) {
+  .skills .title {
+    font-size: 0.8rem;
+  }
+
+  .skills .title::after {
+    font-size: 0.7rem;
+  }
+
+  .skills .skills-content .left a {
+    font-size: 8px;
+    padding: 1px 3px;
+  }
+
+  #skills {
+    padding-top: 5px; /* Minimal padding for the smallest screens */
+  }
+}
+
+
+
+/* Contact Section Title Styling */
+/* Contact Section Title Styling */
+.contact .title::after {
+  content: "Get in touch";
+  font-size: 1.5rem; /* Default title size */
+  color: crimson;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+/* Contact Content Layout */
+.contact .contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact .contact-content .column {
+  width: calc(50% - 30px);
+  margin-bottom: 20px; /* Add some spacing between columns */
+}
+
+.contact .contact-content .text {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.contact .contact-content .left p {
+  text-align: justify;
+}
+
+.contact .contact-content .left .icons {
+  margin: 10px 0;
+}
+
+.contact .contact-content .row {
+  display: flex;
+  height: 65px;
+  align-items: center;
+  margin-bottom: 10px; /* Add some space between rows */
+}
+
+.contact .contact-content .row i {
+  font-size: 25px;
+  color: crimson;
+}
+
+.contact .contact-content .info .head {
+  font-weight: 500;
+}
+
+.contact .contact-content .info .sub-title {
+  color: #333;
+}
+
+/* Form Layout */
+.contact .right form .fields {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact .right form .field,
+.contact .right form .fields .field {
+  height: 45px;
+  width: calc(50% - 15px);
+  margin-bottom: 15px;
+}
+
+.contact .right form .textarea {
+  height: 80px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.contact .right form .name {
+  margin-right: 10px;
+}
+
+/* Input and Textarea Styles */
+.contact .right form .field input,
+.contact .right form .textarea textarea {
+  height: 100%;
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 6px;
+  outline: none;
+  padding: 0 15px;
+  font-size: 17px;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.contact .right form .field input:focus,
+.contact .right form .textarea textarea:focus {
+  border-color: #b3b3b3;
+}
+
+.contact .right form .textarea textarea {
+  padding-top: 10px;
+  resize: none;
+}
+
+/* Button Area */
+.contact .right form .button-area {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.contact .right form .button-area button {
+  color: #fff;
+  display: block;
+  width: 160px !important;
+  height: 45px;
+  outline: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  background: crimson;
+  border: 2px solid crimson;
+  transition: all 0.3s ease;
+}
+
+.contact .right form .button-area button:hover {
+  color: crimson;
+  background: none;
+}
+
+/* Responsive Design for Small Screens */
+
+/* For screens smaller than 495px */
+@media (max-width: 495px) {
+  .contact .contact-content .column {
+    width: 100%; /* Stack columns vertically */
+  }
+
+  .contact .contact-content .text {
+    font-size: 16px; /* Reduce font size */
+  }
+
+  .contact .right form .field,
+  .contact .right form .fields .field {
+    width: 100%; /* Make fields full-width */
+    margin-bottom: 10px; /* Reduce margin */
+  }
+
+  .contact .right form .button-area button {
+    width: 100%; /* Make button full-width */
+  }
+}
+
+/* For screens smaller than 434px */
+@media (max-width: 434px) {
+  .contact .contact-content .text {
+    font-size: 14px; /* Reduce font size even more */
+  }
+
+  .contact .right form .button-area button {
+    width: 100%; /* Full-width button */
+    font-size: 16px; /* Smaller button text */
+  }
+}
+
+/* For screens smaller than 398px */
+@media (max-width: 398px) {
+  .contact .contact-content .text {
+    font-size: 13px; /* Further reduce font size */
+  }
+
+  .contact .right form .field,
+  .contact .right form .fields .field {
+    width: 100%; /* Make fields take full width */
+  }
+
+  .contact .right form .button-area button {
+    font-size: 15px; /* Adjust button text size */
+  }
+}
+
+/* For screens smaller than 381px */
+@media (max-width: 381px) {
+  .contact .contact-content .text {
+    font-size: 12px; /* Smaller font size for text */
+  }
+
+  .contact .right form .button-area button {
+    font-size: 14px; /* Smaller button font */
+  }
+}
+
+/* For very small screens (less than 318px) */
+@media (max-width: 318px) {
+  .contact .contact-content .text {
+    font-size: 11px; /* Further decrease text font size */
+  }
+
+  .contact .right form .button-area button {
+    font-size: 13px; /* Even smaller button font */
+    width: 100%; /* Full-width button */
+  }
+}
+
+
+/* For screens smaller than 324px (to avoid overlap) */
+@media (max-width: 324px) {
+  .contact .title {
+    font-size: 1.3rem; /* Adjust the font size of the title */
+    margin-bottom: 10px; /* Reduce margin to avoid overlap */
+  }
+
+  .contact .title::after {
+    font-size: 1rem; /* Adjust font size for the "Get in touch" text */
+    margin-top: 5px; /* Reduce the space between title and subtitle */
+  }
+
+  /* Reduce padding and adjust content layout */
+  .contact .contact-content .column {
+    width: 100%; /* Make columns stack vertically */
+    margin-bottom: 15px; /* Space between stacked columns */
+  }
+
+  .contact .contact-content .text {
+    font-size: 14px; /* Adjust font size for text */
+  }
+
+  /* Adjust button size and layout */
+  .contact .right form .button-area button {
+    font-size: 14px; /* Smaller button font size */
+    width: 100%; /* Make button full-width */
+  }
+}
+
+/* For screens smaller than 224px (to further adjust spacing) */
+@media (max-width: 224px) {
+  .contact .title {
+    font-size: 1rem; /* Further reduce the title size */
+    margin-bottom: 8px; /* Reduce margin between title and content */
+  }
+
+  .contact .title::after {
+    font-size: 0.9rem; /* Further reduce font size for the "Get in touch" text */
+    margin-top: 4px; /* Further reduce the space between title and subtitle */
+  }
+
+  /* Adjust the overall layout for very small screens */
+  .contact .contact-content .column {
+    width: 100%; /* Keep the columns stacked vertically */
+    padding: 0 5px; /* Reduce horizontal padding for smaller screens */
+  }
+
+  .contact .contact-content .text {
+    font-size: 12px; /* Adjust font size for text */
+  }
+
+  .contact .contact-content .row {
+    margin-bottom: 10px; /* Reduce the space between rows */
+  }
+
+  /* Adjust the button to fit well on smaller screens */
+  .contact .right form .button-area button {
+    font-size: 12px; /* Further reduce button font size */
+    width: 100%; /* Keep button full-width */
+    padding: 8px; /* Adjust button padding for small screens */
+  }
+}
+
+/* For extremely small screens (less than 209px) */
+@media (max-width: 209px) {
+  .contact .title {
+    font-size: 0.8rem; /* Further reduce the title size */
+    margin-bottom: 5px; /* Reduce margin between title and content */
+  }
+
+  .contact .title::after {
+    font-size: 0.7rem; /* Further reduce font size for the "Get in touch" text */
+    margin-top: 3px; /* Reduce the space between title and subtitle */
+  }
+
+  /* Ensure contact columns are stacked and spacing is minimized */
+  .contact .contact-content .column {
+    width: 100%; /* Stack the columns */
+    padding: 0 3px; /* Reduce horizontal padding */
+  }
+
+  .contact .contact-content .text {
+    font-size: 10px; /* Adjust font size for text */
+  }
+
+  .contact .right form .button-area button {
+    font-size: 10px; /* Reduce button font size */
+    padding: 5px; /* Adjust padding */
+    width: 100%; /* Keep button full-width */
+  }
+
+  /* Adjust margins between rows */
+  .contact .contact-content .row {
+    margin-bottom: 5px; /* Adjust space between rows */
+  }
+}
+/* For screens smaller than 315px */
+@media (max-width: 315px) {
+  .sub-title a {
+    font-size: 12px; /* Reduce the font size of the email */
+    word-wrap: break-word; /* Ensure long email addresses wrap to the next line */
+    word-break: break-all; /* Break the email string if necessary */
+    display: block; /* Make the email link behave like a block element */
+    max-width: 100%; /* Ensure it takes up the full width */
+    overflow-wrap: break-word; /* Ensure the long text breaks correctly */
+  }
+
+}
+
+.contact {
+  padding: 3rem 0;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+}
+
+.contact-info i {
+  font-size: 1.5rem;
+  color: #dc143c;
+}
+
+.info {
+  font-size: 1rem;
+  color: #555;
+}
+
+.info .head {
+  font-weight: 600;
+}
+
+.info .sub-title {
+  font-size: 1.2rem;
+}
+
+.full-width-text {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.row {
+  margin-bottom: 1rem;
+}
+
+/* Media Query for screens less than 376px */
+@media (max-width: 376px) {
+
+  .contact {
+    padding: 0px;
+  }
+  .contact h2 {
+    font-size: 1.8rem;
+  }
+
+  .icons {
+    margin-left: 10px;
+  }
+
+  .contact-info i {
+    font-size: 1.3rem;
+  }
+
+  /* Decrease text size for smaller screens */
+  .info .head {
+    font-size: 1rem;
+  }
+
+  .info .sub-title {
+    font-size: 0.9rem;
+  }
+
+  /* Specifically decrease link text sizes */
+  .contact-info a {
+    font-size: 0.8rem !important; /* Added !important to ensure override */
+  }
+}
+
+/* Ensures that icons and text are aligned on a single row */
+.row.align-items-center {
+  display: flex;
+  align-items: center;
+}
+
+.icons i {
+  font-size: 2rem; /* Adjust icon size */
+}
+
+
+.row.flex-nowrap {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  align-items: center; /* Vertically align the items */
+  gap: 0.5rem; /* Optional: You can adjust this for a small gap between icon and text */
+  width: auto; /* Remove 100% width */
+}
+
+.icons i {
+  font-size: 2rem; /* Adjust icon size */
+  margin: 0; /* Ensure no margin on the icon */
+}
+
+  /* For contact info row */
+  .contact-info {
+    display: flex;
+    align-items: center; /* Vertically align icon and text */
+    gap: 0.5rem; /* Optional: Adjust the gap between icon and text */
+    margin: 0;
+    white-space: nowrap; /* Prevent wrapping of icon and text */
+}
+
+.contact-info i {
+    font-size: 2rem; /* Adjust icon size */
+    margin: 0; /* Remove any margin from icons */
+}
+
+.info {
+    display: flex;
+    flex-direction: column; /* Stack the name and the value vertically */
+    margin: 0; /* Remove margin from the info container */
+}
+
+.info .head {
+    font-weight: 600;
+}
+
+.info .sub-title {
+    font-size: 1.1rem;
+}
+
+
+/* Media Queries to Adjust for Smaller Screens */
+
+/* Small screens - below 576px */
+@media (max-width: 576px) {
+  /* Home Section */
+  .home .home-content .text-1 {
+    font-size: 22px;
+  }
+
+  .home .home-content .text-2 {
+    font-size: 50px;
+  }
+
+  .home .home-content .text-3 {
+    font-size: 30px;
+  }
+
+  .home .home-content a {
+    font-size: 22px;
+  }
+
+  /* Contact Section Adjustments */
+  .contact .icons .row i {
+    font-size: 20px;
+  }
+
+  .contact .contact-content .info .sub-title {
+    font-size: 16px;
+  }
+
+  /* Navbar adjustments */
+  .navbar-nav .nav-link {
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  /* Scroll button size */
+  .scroll-up-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 25px;
+  }
+
+  /* About and Services Section */
+  .services .card .text {
+    font-size: 18px;
+  }
+
+  /* About Section Image */
+  .about .about-content .left img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Contact Section */
+  .contact .contact-content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* Remove padding and margin on small screens */
+  .about .about-content,
+  .services .services-content,
+  .contact .contact-content {
+    padding: 0;
+  }
+}
+/* Ensure content is not hidden behind the navbar */
+section {
+  padding-top: 70px; /* Adjust this value based on your navbar height */
+}
+
+/* Smooth scrolling behavior (optional) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* When the side navbar is shown, we can apply padding to ensure no content is hidden */
+.side-navbar + .container {
+  padding-top: 70px; /* Adjust this if the navbar height is different */
+}
+
+/* Optional: Ensure that each section links are appropriately offset */
+#home, #about, #services {
+  padding-top: 80px; /* Ensure enough space from top when navbar is fixed */
+}
+
+#about {
+  padding-top: 80px;  /* Add specific padding for about section */
+}
+
+#contact {
+  padding-top: 20px;
+}
+#skills {
+  padding-top: 40px; 
+}
+
+.skills-content {
+  font-size: 1rem;
+}
+
+/* Increase font size and weight of the spans inside the skill section */
+.skill span {
+  font-size: 1.2rem; /* Increased font size */
+  font-weight: 600;  /* Increased font weight */
+}
+
+
+/* another css from dushyant side  */
+.dow_res{
+  display: inline-block;
+    background: crimson;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid #dc3545;
+    transition: all 0.3s ease;
+    text-align: center;
+    transition: all 0.3s ease; 
+}
+.dow_res:hover {
+  border: 2px solid crimson;
+  background: #fff; /* Change background to white */
+  color: crimson; /* Change text color to crimson */
+  /* transform: scale(1.05); Slightly enlarge the button */
+}
+
